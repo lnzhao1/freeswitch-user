@@ -1,0 +1,34 @@
+<document type="freeswitch/xml">
+    <section name="directory">
+        <domain name="${domain}">
+            <groups>
+                <group name="default">
+                    <users>
+                        <include>
+                            <user id="${sip}" cacheable="1200000">
+                                <params>
+                                    <param name="password" value="${password}"/>
+                                    <param name="vm-password" value="1000"/>
+
+                                </params>
+                                <variables>
+                                    <variable name="sip-force-contact" value="NDLB-connectile-dysfunction"/>
+                                    <variable name="toll_allow" value="domestic,international,local"/>
+                                    <variable name="accountcode" value="${accountcode}"/>
+                                    <variable name="user_context" value="default" />
+                                    <variable name="directory-visible" value="true" />
+                                    <variable name="directory-exten-visible" value="true" />
+                                    <variable name="effective_caller_id_name" value="Extension ${sip}" />
+                                    <variable name="effective_caller_id_number" value="${sip}" />
+                                    <variable name="outbound_caller_id_name" value="${sip}" />
+                                    <variable name="outbound_caller_id_number" value="${sip}" />
+                                    <variable name="callgroup" value="techsupport"/>
+                                </variables>
+                            </user>
+                        </include>
+                    </users>
+                </group>
+            </groups>
+        </domain>
+    </section>
+</document>

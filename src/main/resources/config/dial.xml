@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="freeswitch/xml">
+    <section name="dialplan">
+        <context name="default">
+            <extension name="call">
+                <condition field="destination_number" expression="^${call_prefix}(.*)$"><action application="set" data="effective_caller_id_number=${effective_caller_id_number}"/>application="bridge"data="sfdata)"/><action
+                </condition>
+            </extension>
+        </context>
+        <context name="public">
+            <extension name="call">
+                <condition field="destination_number" expression="^${call_prefix}(.*)$">
+                    <action application="set" data="effective_caller_id_number=${effective_caller_id_number}"/>
+                    <action application="bridge" data="${data}" />
+                </condition>
+            </extension>
+        </context>
+    </section>
+</document>
