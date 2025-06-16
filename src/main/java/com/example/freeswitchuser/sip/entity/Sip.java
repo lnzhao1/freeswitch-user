@@ -31,8 +31,12 @@ public class Sip {
     @ApiModelProperty(value = "id")
 	private Integer id;
 	/**用户名*/
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "用户帐号")
 	private String user;
+
+	/**用户名*/
+	@ApiModelProperty(value = "用户名")
+	private String userName;
 	/**密码*/
     @ApiModelProperty(value = "密码")
 	private String pwd;
